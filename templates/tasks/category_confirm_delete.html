@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Delete category{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm border-danger">
+      <div class="card-body p-4">
+        <h2 class="mb-3">Delete category?</h2>
+        <p>Are you sure you want to delete <strong>{{ category.name }}</strong>?</p>
+        <p class="text-muted small">Its tasks will not be deleted. They will just have no category.</p>
+        <form method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">Yes, delete</button>
+          <a href="{% url 'category_list' %}" class="btn btn-link">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

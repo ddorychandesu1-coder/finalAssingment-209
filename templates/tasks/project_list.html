@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="mb-0">Projects</h2>
+  <a href="{% url 'project_create' %}" class="btn btn-primary">+ New project</a>
+</div>
+
+{% if projects %}
+<div class="row g-3">
+  {% for project in projects %}
+  <div class="col-md-6 col-lg-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="{% url 'project_detail' project.pk %}" class="text-decoration-none">{{ project.name }}</a>
+        </h5>
+        <p class="text-muted small mb-2">{{ project.description|default:"No description."|truncatechars:90 }}</p>
+        <span class="badge bg-primary">{{ project.task_count }} task{{ project.task_count|pluralize }}</span>
+      </div>
+      <div class="card-footer bg-white">
+        <a href="{% url 'project_update' project.pk %}" class="btn btn-sm btn-outline-primary">Edit</a>
+        <a href="{% url 'project_delete' project.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="text-center text-muted py-5">
+  <p class="lead">You have no projects yet.</p>
+  <a href="{% url 'project_create' %}" class="btn btn-primary">Create your first project</a>
+</div>
+{% endif %}
+{% endblock %}
