@@ -14,17 +14,18 @@ A Django web application for managing personal tasks. Users can register, organi
 
 ## Tech stack
 
-- Python [your version], Django [your version]
+- Python 3.14.6
+- Django 6.1.3
 - SQLite
-- Bootstrap 5 (CDN)
-
+- Bootstrap 5.3 (loaded from a CDN)
+- Pillow (for avatar uploads)
 ## Setup
 
 ```bash
-git clone [your repo link, or just unzip the project]
+git clone https://github.com/ddorychandesu1-coder/finalAssingment-209.git
 cd taskmanager
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
@@ -41,18 +42,18 @@ python manage.py test
 
 ## Project structure
 
-- `accounts/`: custom user, register, profile
-- `tasks/`: Task, Project, Category models and views
-- `core/`: home page and dashboard
-- `templates/`: all HTML templates
-
-## Screenshots
-
-[Add images here: dashboard, task list, task form, projects]
+| Folder | Purpose |
+|---|---|
+| `config/` | Project settings and main URLs |
+| `accounts/` | Custom user model, registration, profile |
+| `tasks/` | Task, Project and Category models, forms and views |
+| `core/` | Home page and dashboard |
+| `templates/` | All HTML templates |
 
 ## Author
 
 [Group memeber : - Ty David
                  - Sinoun Chanun 
                  - Run Ratha
+
 Class : 209A]
