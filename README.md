@@ -23,7 +23,6 @@ A Django web application for managing personal tasks. Users can register, organi
 
 ```bash
 git clone https://github.com/ddorychandesu1-coder/finalAssingment-209.git
-cd taskmanager
 python -m venv .venv
 source venv\Scripts\activate
 pip install -r requirements.txt
